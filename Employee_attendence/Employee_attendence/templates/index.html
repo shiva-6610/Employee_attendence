@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Attendance Tracker</title>
+</head>
+<body>
+    <h2>Employee List</h2>
+    <a href="{{ url_for('add_employee') }}">Add Employee</a> |
+    <a href="{{ url_for('view_records') }}">View All Attendance</a>
+    <ul>
+        {% for emp in employees %}
+        <li>
+            {{ emp.name }} (ID: {{ emp.emp_id }}) 
+            <a href="{{ url_for('mark_attendance', emp_id=emp.emp_id) }}">Mark Attendance</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

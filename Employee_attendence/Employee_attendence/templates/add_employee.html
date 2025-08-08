@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+</head>
+<body>
+    <h2>Add New Employee</h2>
+    <form method="POST">
+        Name: <input type="text" name="name" required><br><br>
+        Employee ID: <input type="text" name="emp_id" required><br><br>
+        <input type="submit" value="Add">
+    </form>
+    <a href="{{ url_for('index') }}">⬅ Back</a>
+</body>
+</html>

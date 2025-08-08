@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+</head>
+<body>
+    {% if not all_view %}
+    <h2>Mark Attendance for {{ employee.name }}</h2>
+    <form method="POST">
+        <button name="action" value="Check-In">Check-In</button>
+        <button name="action" value="Check-Out">Check-Out</button>
+    </form>
+    {% endif %}
+
+    <h3>Attendance Records</h3>
+    <ul>
+        {% for r in records %}
+        <li>{{ r.timestamp }} — {{ r.action }} ({{ r.name if all_view else "" }})</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">⬅ Back</a>
+</body>
+</html>
